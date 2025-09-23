@@ -1,0 +1,66 @@
+#entrance {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--background-navbar);
+    overflow-x: hidden;
+}
+
+.entrance__login {
+    direction: ltr;
+}
+
+.entrance__register {
+    direction: rtl;
+}
+
+#entrance__aside {
+    width: 100%;
+    height: 100%;
+    background-image: url("public/images/entrance_background.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.entrance__aside_login {
+    background-position: left;
+    animation: toLeft .45s ease-out;
+}
+
+.entrance__aside_register {
+    background-position: right;
+    animation: toRight .45s ease-out;
+}
+
+@keyframes toLeft {
+    0% {
+        transform: translateX(100%);
+        background-position: right;
+    }
+    100% {
+        transform: translateX(0);
+        background-position: left;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        transform: translateX(-100%);
+        background-position: left;
+    }
+    100% {
+        transform: translateX(0);
+        background-position: right;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #entrance__aside {
+        display: none;
+    }
+    #entrance {
+        grid-template-columns: 1fr;
+
+    }
+}

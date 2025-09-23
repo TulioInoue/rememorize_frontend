@@ -1,0 +1,62 @@
+:root {
+  --primary-color: #244855;
+  --primary-light-color: #367A93;
+  --secondary-color: #D35A3F;
+  --secondary-light-color: #db6449;
+  --secondary-dark-color: #C34829;
+  --background-navbar: #1B242A;
+  --background-navbar-light: #2B3841;
+  --background-navbar-lighter: #34434D;
+  --text: #FFFFFF;
+  --text-placeholder: #B5B5B5;
+  --success: #44754F;
+  --light-success: #53C92B;
+  --error: #F74646;
+  --yellow: #F4FF27;
+  --bronze: #DF8E3E;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', 'Arial';
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100dvh;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.btn__outline, .btn__secondary {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  color: var(--text);
+  cursor: pointer;
+  text-transform: capitalize;
+  outline: none;
+}
+
+.btn__outline {
+  background: none;
+}
+
+.btn__secondary {
+  background-color: var(--secondary-color);
+}
+
+.btn__secondary:hover, .btn__secondary:focus {
+  background-color: var(--secondary-light-color);
+}

@@ -1,0 +1,67 @@
+#register {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-navbar);
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0rem;
+    gap: 5rem;
+    direction: ltr;
+}
+
+#register__header {
+    padding: 0rem 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#register__header div {
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+    font-size: 4rem;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+#register__header div::first-letter {
+    text-transform: uppercase;
+}
+
+#register__header h3 {
+    color: var(--text);
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#register__form {
+    padding: 0 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+#register__links {
+    text-align: right;
+}
+
+#register__links a {
+    text-decoration: none;
+    color: var(--text-placeholder);
+    font-size: 1.25rem;
+    outline: none;
+    display: inline-block;
+    transition: transform .1s ease;
+}
+
+#register__links a:hover, #register__links a:focus {
+    transform: translateY(-2px);
+    color: var(--text);
+}
+
+#register__form_button {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
