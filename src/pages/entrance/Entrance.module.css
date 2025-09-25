@@ -21,6 +21,7 @@
     background-image: url("public/images/entrance_background.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 2;
 }
 
 .entrance__aside_login {

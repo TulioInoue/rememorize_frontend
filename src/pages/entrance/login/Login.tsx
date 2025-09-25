@@ -1,23 +1,57 @@
 import style from "./Login.module.css";
 
-import { Link } from "react-router";
+import { Link, useNavigate, useOutletContext } from "react-router";
 
 import Input from "../../../components/input/Input";
 
 import { useState } from "react";
+import axios from "axios";
+
+interface AlertInterface {
+    message: string
+    type: "success" | "danger" | "alert"
+    isActive: boolean
+}
+
+type OutletContext = React.Dispatch<React.SetStateAction<AlertInterface>>
 
 export default function Login() {
 
+    const navigate = useNavigate();
     const [formContent, setFormContent] = useState({
         email: "",
         password: "",
     })
+    const setAlert = useOutletContext<OutletContext>()
 
     function handleFormChange(key: string, e: React.ChangeEvent<HTMLInputElement>) {
         setFormContent(element => ({
             ...element,
             [key]: e.target.value
         }))
+    }
+
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        axios.post(
+            `${import.meta.env.VITE_BACKEND_URL}/users/login`, formContent
+        ).then(
+            response => {
+                localStorage.setItem("token", response.data);
+                navigate("../notebook/calendar")
+            }
+        ).catch(
+            error => {
+                console.log(error.response.data.detail);
+                setAlert(
+                    {
+                        message: error.response.data.detail,
+                        type: "alert",
+                        isActive: true,
+                    }
+                )
+            }
+        )
     }
     
     return <main id = {style.login}>
@@ -27,7 +61,7 @@ export default function Login() {
             </div>
             <h3>login</h3>
         </section>
-        <form id = {style.login__form} >
+        <form id = {style.login__form} onSubmit={(e) => handleSubmit(e)}>
             <Input
                 label = "email:"
                 placeholder = "user@email.com"

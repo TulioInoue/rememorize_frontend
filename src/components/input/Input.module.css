@@ -48,4 +48,14 @@
     border: none;
 }
 
+.input__message {
+    display: flex;
+    color: var(--secondary-color);
+    align-items: center;
+    gap: 5px;
+    text-transform: lowercase;
+}
 
+.input__message_text::first-letter {
+    text-transform: uppercase;
+}

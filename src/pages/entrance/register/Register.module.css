@@ -7,10 +7,20 @@
     padding: 5rem 0rem;
     gap: 5rem;
     direction: ltr;
+    animation: toLeft .5s ease;
+}
+
+@keyframes toLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 #register__header {
-    padding: 0rem 10rem;
+    padding: 0 10%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -36,7 +46,7 @@
 }
 
 #register__form {
-    padding: 0 15rem;
+    padding: 0 15%;
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -65,3 +75,23 @@
     justify-content: end;
     gap: 2rem;
 }
+
+/* @media screen and (max-width: 1000px) {
+    #register__header {
+        padding: 0rem 5%;
+    }
+    #register__form {
+        padding: 0 5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #register__header {
+        padding: 0rem 5%;
+    }
+    #register__form {
+        width: 100%;
+        padding: 0 15%;
+    }
+
+} */
